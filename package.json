@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,14 @@
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
+    "nodemon": "^1.19.1",
     "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "pg": "^7.12.1",
+    "sequelize": "^5.14.0"
   }
 }
