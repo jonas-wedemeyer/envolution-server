@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const app = new Koa();
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.SERVER_PORT || 3001;
 
 const router = require('./router/index');
 const db = require('./models');
