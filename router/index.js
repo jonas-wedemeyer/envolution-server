@@ -1,12 +1,17 @@
 const Router = require('koa-router');
 const router = new Router();
 
-const controller = require('../controller/');
+const {
+  getProjectList,
+  getOneProject,
+  updatePax,
+} = require('../controller/projects');
+const { getOneOrg } = require('../controller/organizations');
 
-router.get('/projects', controller.projects.getProjectList);
-router.get('/projects/:id', controller.projects.getOneProject);
-router.put('/projects/:id', controller.projects.updatePax);
+router.get('/projects', getProjectList);
+router.get('/projects/:id', getOneProject);
+router.put('/projects/:id', updatePax);
 
-router.get('/orgs/:id', controller.organizations.getOneOrg);
+router.get('/orgs/:id', getOneOrg);
 
 module.exports = router;
