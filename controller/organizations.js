@@ -1,4 +1,4 @@
-const { organization: Organization } = require('../models/organizaions');
+const { organization: Organization } = require('../models/organizations');
 
 exports.getOneOrg = async (ctx, next) => {
   try {
