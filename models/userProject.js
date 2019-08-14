@@ -7,12 +7,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     projectId: {
       type: DataTypes.UUID,
+      allowNull: false,
     },
     userId: {
       type: DataTypes.UUID,
+      allowNull: false,
     },
     date: {
       type: DataTypes.DATE,
+      allowNull: true,
     },
   });
 

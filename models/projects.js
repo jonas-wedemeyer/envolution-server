@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       address: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       latitude: {
         type: DataTypes.INTEGER,
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       date: {
         type: DataTypes.DATE,
-        allowNull: true,
+        allowNull: false,
       },
       shortTerm: {
         type: DataTypes.BOOLEAN,
