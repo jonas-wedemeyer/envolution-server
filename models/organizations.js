@@ -1,5 +1,4 @@
 'use strict';
-const Sequelize = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   const Organization = sequelize.define(
@@ -11,32 +10,35 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
+      },
+      mission: {
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
       city: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
       },
-      categories: {
-        type: DataTypes.ARRAY(Sequelize.TEXT),
+      category: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       picture: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       website: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
       },
     },
     {},
   );
   Organization.associate = models => {
     Organization.hasMany(models.project, {
-      foreignKey: 'organizationId',
-      sourceKey: 'id',
+      as: 'projects',
     });
   };
   return Organization;

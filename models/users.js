@@ -6,22 +6,23 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     firstName: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     lastName: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     projectId: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   });
 
   User.associate = models => {
-    User.hasMany(models.project, {
+    User.belongsToMany(models.project, {
       through: models.userProject,
+      foreignKey: 'userId',
       as: 'projects',
     });
   };

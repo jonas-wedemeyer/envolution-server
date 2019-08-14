@@ -1,10 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
   const UserProject = sequelize.define('userProject', {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      allowNull: false,
+    },
     projectId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
     },
     date: {
       type: DataTypes.DATE,
@@ -14,11 +19,9 @@ module.exports = (sequelize, DataTypes) => {
   UserProject.associate = models => {
     UserProject.belongsTo(models.project, {
       foreignKey: 'projectId',
-      targetKey: 'id',
     });
     UserProject.belongsTo(models.user, {
       foreignKey: 'userId',
-      targetKey: 'id',
     });
   };
   return UserProject;
