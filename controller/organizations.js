@@ -1,0 +1,1 @@
+exports.getOneOrg = ctx => {};
