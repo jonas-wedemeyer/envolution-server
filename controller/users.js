@@ -1,3 +1,9 @@
-exports.signIn = ctx => {};
+exports.signIn = async (ctx, next) => {
+  try {
+  } catch (error) {}
+};
 
-exports.register = ctx => {};
+exports.register = async (ctx, next) => {
+  try {
+  } catch (error) {}
+};
