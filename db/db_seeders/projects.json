@@ -1,0 +1,48 @@
+[
+  {
+    "id": "047d8aa3-3cfc-481f-aa59-6d8619ad539a",
+    "name": "Plant trees in the city",
+    "category": "Land", 
+    "organizationName": "Tree People", 
+    "organizationId": "8e24cf7b-52e9-4a69-9a2c-df0d22edac46", 
+    "address": "12601 Mulholland Drive, Beverley Hil;s, CA 90210",
+    "city": "Los Angeles", 
+    "date": "2019-08-05T08:40:51.620Z",
+    "shortTerm": "true",
+    "time": "4 hours",
+    "picture": "https://images.unsplash.com/photo-1456693906521-44e96e49e85f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "description": "Come spend the morning with the City of Huntington Park and TreePeople in caring for trees that add beauty and much needed shade to our community.", 
+    "role": "Planter",
+    "qualifications": "No specific skills required", 
+    "tasks": [
+      "Prepare soil for planting (tilling and watering),", 
+      "Digging of holes and calculation of space between plantings", 
+      "Place and stake the sapling"
+    ],
+    "totalSpaces": "12",
+    "spacesAvailable": "4"
+  }, 
+  {
+    "id": "d4ad1c26-453f-416b-a0c0-2640be6d29c2",
+    "name": "Restore the Angeles forest",
+    "category": "Land", 
+    "organizationName": "Tree People", 
+    "organizationId": "8e24cf7b-52e9-4a69-9a2c-df0d22edac46", 
+    "address": "Mount Mooney Road, Palmdale, CA, 93550",
+    "city": "Los Angeles", 
+    "date": "2019-09-03T10:00:00.620Z",
+    "shortTerm": "true",
+    "time": "8:40pm",
+    "picture": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    "description": "Below the rocky hills of the Sierra Pelona mountains, next to a creek leading to the Santa Clara River, we will be restoring an area of the wildlands damaged by the Copper Fire by caring for the native chaparral plants which provide deer, coyotes and others with food and shelter.", 
+    "role": "Forest Restorer",
+    "qualifications": "No specific skills required", 
+    "tasks": [
+      "Pruning and watering chaparral plants damaged in a recent fire,", 
+      "Preparing food for local wildlife", 
+      "Creating spaces that can be used as wildlife shelter"
+    ],
+    "totalSpaces": "20",
+    "spacesAvailable": "10"
+  }
+]
