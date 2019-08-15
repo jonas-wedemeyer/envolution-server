@@ -4,7 +4,7 @@ const cors = require('@koa/cors');
 const port = process.env.SERVER_PORT || 3001;
 
 const router = require('./router/index');
-const db = require('./models');
+const db = require('./db/models');
 
 app
   .use(cors())
