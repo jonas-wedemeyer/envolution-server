@@ -1,9 +1,9 @@
-const { project: Project } = require('../db/models/projects');
+const { project } = require('../db/models/');
 
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
   try {
-    const projectList = await Project.findAll({
+    const projectList = await project.findAll({
       city: inputCity,
     });
     if (projectList) {
@@ -24,13 +24,13 @@ exports.getProjectList = async (ctx, next) => {
 exports.getOneProject = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    const project = await Project.findOne({
+    const proj = await project.findOne({
       id: projectId,
     });
-    if (project) {
+    if (proj) {
       ctx.body = {
         status: 'success',
-        data: project,
+        data: proj,
       };
       ctx.status = 200;
     } else {
@@ -43,29 +43,38 @@ exports.getOneProject = async (ctx, next) => {
 };
 
 exports.createProject = async (ctx, next) => {
-  const project = ctx.request.body;
+  const proj = ctx.request.body;
+  console.log('REQ.BODY', proj);
   try {
-    await Project.create({
-      name: project.name,
-      category: project.category,
-      id: project.id,
-      adddress: project.address,
-      city: project.city,
-      date: project.date,
-      shortTerm: project.shortTerm,
-      time: project.time,
-      description: project.description,
-      role: project.role,
-      qualifications: project.qualifications,
-      tasks: project.tasks,
-      totalSpaces: project.totalSpaces,
-    }).then(project => {
-      console.log(
-        project.get({
-          plain: true,
-        }),
-      );
-    });
+    await project
+      .create(
+        {
+          name: proj.name,
+          category: proj.category,
+          organizationName: proj.organizationName,
+          organizationId: proj.organizationId,
+          address: proj.address,
+          city: proj.city,
+          date: proj.date,
+          shortTerm: proj.shortTerm,
+          time: proj.time,
+          description: proj.description,
+          role: proj.role,
+          qualifications: proj.qualifications,
+          tasks: proj.tasks,
+          totalSpaces: proj.totalSpaces,
+        },
+        {
+          returning: true,
+        },
+      )
+      .then(project => {
+        console.log(
+          project.get({
+            plain: true,
+          }),
+        );
+      });
     ctx.status = 201;
   } catch (error) {
     ctx.status = error.status || 500;
@@ -76,7 +85,7 @@ exports.createProject = async (ctx, next) => {
 exports.getAllPax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    const participants = await Project.findAll({
+    const participants = await project.findAll({
       include: [
         {
           model: 'User',
@@ -107,23 +116,25 @@ exports.getAllPax = async (ctx, next) => {
 exports.updatePax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    await Project.addUser('user', {
-      through: {
-        enrollDate: new Date(),
-        where: {
-          id: projectId,
+    await project
+      .addUser('user', {
+        through: {
+          enrollDate: new Date(),
+          where: {
+            id: projectId,
+          },
+          returning: true,
+          plain: true,
         },
-        returning: true,
-        plain: true,
-      },
-    }).on('success', user => {
-      Project.decrement('spacesAvailable', {
-        by: 1,
-        where: {
-          id: projectId,
-        },
+      })
+      .on('success', user => {
+        project.decrement('spacesAvailable', {
+          by: 1,
+          where: {
+            id: projectId,
+          },
+        });
       });
-    });
     ctx.status = 200;
   } catch (error) {
     ctx.status = error.status || 500;
