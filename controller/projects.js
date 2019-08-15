@@ -1,4 +1,5 @@
 const { project } = require('../db/models/');
+const { user } = require('../db/models/');
 
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
@@ -86,15 +87,11 @@ exports.getAllPax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
     const participants = await project.findAll({
+      id: projectId,
       include: [
         {
-          model: 'User',
-          through: {
-            model: 'UserProjects',
-            where: {
-              projectId: projectId,
-            },
-          },
+          model: user,
+          as: 'users',
         },
       ],
     });
@@ -116,25 +113,22 @@ exports.getAllPax = async (ctx, next) => {
 exports.updatePax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    await project
-      .addUser('user', {
-        through: {
-          enrollDate: new Date(),
-          where: {
-            id: projectId,
-          },
-          returning: true,
-          plain: true,
-        },
-      })
-      .on('success', user => {
-        project.decrement('spacesAvailable', {
-          by: 1,
-          where: {
-            id: projectId,
-          },
-        });
-      });
+    await project.update('user', {
+      through: {
+        enrollDate: new Date(),
+      },
+      where: {
+        id: projectId,
+      },
+      returning: true,
+      plain: true,
+    });
+    await project.decrement('spacesAvailable', {
+      by: 1,
+      where: {
+        id: projectId,
+      },
+    });
     ctx.status = 200;
   } catch (error) {
     ctx.status = error.status || 500;
