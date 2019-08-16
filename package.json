@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint",
     "dev": "nodemon index.js",
+    "seed:all": "npx sequelize db:seed:all --config ./db/config.js --seeders-path ./db/db_seeders",
+    "seed:undo": "npx sequelize db:seed:undo:all --config ./db/config.js --seeders-path ./db/db_seeders",
     "start": "node index.js"
   },
   "repository": {
@@ -34,11 +36,13 @@
     "prettier": "^1.18.2"
   },
   "dependencies": {
+    "@koa/cors": "^3.0.0",
     "dotenv": "^8.0.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "pg": "^7.12.1",
-    "sequelize": "^5.14.0"
+    "sequelize": "^5.14.0",
+    "sequelize-cli": "^5.5.0"
   }
 }

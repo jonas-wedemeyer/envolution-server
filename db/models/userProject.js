@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
     },
-    date: {
+    enrollDate: {
       type: DataTypes.DATE,
       allowNull: true,
     },

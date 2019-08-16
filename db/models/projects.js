@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       id: {
         type: DataTypes.UUID,
         primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
         allowNull: false,
       },
       name: {
@@ -17,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      organizationName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       organizationId: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -25,13 +30,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      latitude: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      longitude: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
+      city: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       date: {
         type: DataTypes.DATE,
@@ -58,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
       qualifications: {
-        type: DataTypes.ARRAY(DataTypes.TEXT),
+        type: DataTypes.TEXT,
         allowNull: true,
       },
       tasks: {

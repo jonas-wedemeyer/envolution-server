@@ -1,11 +1,17 @@
 const Koa = require('koa');
 const app = new Koa();
+const cors = require('@koa/cors');
+const bodyParser = require('koa-bodyparser');
 const port = process.env.SERVER_PORT || 3001;
 
 const router = require('./router/index');
-const db = require('./models');
+const db = require('./db/models');
 
-app.use(router.routes()).use(router.allowedMethods());
+app
+  .use(cors())
+  .use(bodyParser())
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 (async () => {
   try {
