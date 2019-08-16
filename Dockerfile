@@ -1,8 +1,8 @@
-FROM node:11
+FROM node:10
 
-RUN mkdir -p  /app/srv
+RUN mkdir -p /app/envolution
 
-WORKDIR /app/srv
+WORKDIR /app/envolution
 
 COPY package*.json ./
 
@@ -10,6 +10,6 @@ RUN npm install
 
 COPY ./ ./
 
-EXPOSE 5000
+EXPOSE 8080
 
 CMD ["npm", "run", "dev"]
