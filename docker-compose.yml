@@ -1,0 +1,26 @@
+version: '3.1'
+
+services: 
+  server: 
+    build: ./
+    environment: 
+    expose: 
+      - ${SERVER_PORT}
+    environment: 
+      - NODE_ENV= ${NODE_ENV}
+      - SERVER_PORT=${SERVER_PORT}
+      - CLOUDINARY_URL=${CLOUDINARY_URL}
+    ports: 
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on: 
+      - db
+    command: npm run dev
+  db: 
+    image: postgres
+    restart: always
+    environment: 
+      - POSTGRES_USER=${DB_USR}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    ports: 
+      - 5432:5432
