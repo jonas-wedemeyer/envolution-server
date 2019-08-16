@@ -2,7 +2,7 @@ const Koa = require('koa');
 const app = new Koa();
 const cors = require('@koa/cors');
 const bodyParser = require('koa-bodyparser');
-const port = process.env.SERVER_PORT || 3001;
+const port = process.env.SERVER_PORT || 3002;
 
 const router = require('./router/index');
 const db = require('./db/models');
@@ -17,7 +17,7 @@ app
   try {
     await db.sequelize.sync();
     app.listen(port);
-    console.log(`Server listening!!`); // eslint-disable-line no-console
+    console.log(`Server listening on port ${port}!!`); // eslint-disable-line no-console
   } catch (error) {
     console.error('Error connecting to database', error); // eslint-disable-line no-console
   }
