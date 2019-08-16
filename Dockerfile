@@ -1,0 +1,15 @@
+FROM node:11
+
+RUN mkdir -p  /app/srv
+
+WORKDIR /app/srv
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+EXPOSE 5000
+
+CMD ["npm", "run", "dev"]
