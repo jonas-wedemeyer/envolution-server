@@ -8,20 +8,31 @@ module.exports = (sequelize, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     picture: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    projectId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    password: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    aboutMe: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    interests: {
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+      allowNull: true,
     },
   });
 

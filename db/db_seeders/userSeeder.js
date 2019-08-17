@@ -11,6 +11,10 @@ module.exports = {
         lastName: user.lastName,
         picture: user.picture,
         projectId: user.projectId,
+        email: user.email,
+        password: user.password,
+        aboutMe: user.aboutMe,
+        interests: user.interests,
         createdAt: new Date(),
         updatedAt: new Date(),
       });

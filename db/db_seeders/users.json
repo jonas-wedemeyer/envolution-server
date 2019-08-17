@@ -4,13 +4,26 @@
     "firstName": "Rosalia", 
     "lastName": "Vila Tobella",
     "picture": "https://img2.rtve.es/v/5366449/", 
-    "projectId": "047d8aa3-3cfc-481f-aa59-6d8619ad539a"
+    "email": "rosalia@gmail.com", 
+    "password": "$2a$10$eC91zG.13bcEraW4EgquB.cOjP4upiO0FeODnWVFrdzHnVr2tFeL6", 
+    "aboutMe": "I am a Spanish singer, songwriter, musician, record producer, businesswoman, actress, dancer, fashion designer, and model.", 
+    "interests": [
+      "Ocean", 
+      "Air"
+    ]
   }, 
   {
     "id": "1391f1d7-eb16-438e-ac5a-dd9975cec50c", 
     "firstName": "Thalia", 
     "lastName": "Miranda", 
     "picture": "https://www.billboard.com/files/styles/article_main_image/public/media/thalia-smiling-2015-r-billboard-1548.jpg", 
-    "projectId": "047d8aa3-3cfc-481f-aa59-6d8619ad539a"
+    "email": "thalia@gmail.com", 
+    "password": "$2a$10$yPgukIGIPHleJXJN7Or4Gu3gAwVow/h0aFurEAxq9GyK4UgsOGHvy", 
+    "aboutMe": "I am a Mexican singer, songwriter, producer, actress and entrepreneur. She is considered one of the most successful and influential Mexican artists worldwide.", 
+    "interests": [
+      "Land", 
+      "Wildlife", 
+      "Air"
+    ]
   }
 ]
