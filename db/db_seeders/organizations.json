@@ -7,5 +7,59 @@
     "category": "Land",
     "picture": "https://www.treepeople.org/profiles/treepeople/themes/custom/progressive/logo.png",
     "website": "treepeople.org"
+  }, 
+  {
+    "id": "7c5e39af-dabd-4464-8efb-c75eba62b8d4",
+    "name": "Surfrider", 
+    "mission": "Surfrider aims to tackle the marine litter issue through education, citizen participation, and lobbying.",
+    "city": "Barcelona",
+    "category": "Ocean",
+    "picture": "https://www.initiativesoceanes.org/_2016/img/sfe-new-logo-white.png",
+    "website": "initiativesoceanes.org"
+  },
+  {
+    "id": "52e8ef66-438b-4038-8064-290551429bd7",
+    "name": "Pure Clean Earth", 
+    "mission": "Pure Clean Earth aims to properly sort and recycle every bit of trash that is collected to make sure that each material can be re-used when possible.  So, what’s the point in all of this? Rooted in every event is education, we provide the volunteers with information about plastic pollution and inspire them to help become a part of the solution.",
+    "city": "Barcelona",
+    "category": "Ocean",
+    "picture": "https://static.wixstatic.com/media/703ac4_b86ea50954654a4bacfaeb867a3e7a75~mv2_d_1395_1395_s_2.png/v1/fill/w_206,h_206,al_c,q_80,usm_0.66_1.00_0.01/LOGO_PNG.webp",
+    "website": "https://www.purecleanearth.org/"
+  },
+  {
+    "id": "b3324970-28bd-479e-a852-db4eb0afb182",
+    "name": "Oceana", 
+    "mission": "Oceana is the largest international advocacy group working solely to protect the world’s oceans. Oceana wins policy victories for the oceans using science-based campaigns.",
+    "city": "Santiago",
+    "category": "Ocean",
+    "picture": "https://oceana.org/sites/all/themes/oceana/images/logo_en.png",
+    "website": "oceana.org"
+  },
+  {
+    "id": "872916b9-82ba-407f-b0e0-0d97f3e21d30",
+    "name": "African Conservation Experience", 
+    "mission": "African Conservation Experience helps wildlife conservationists in southern Africa. They are currently a leading player in the fight against cruel practices such as lion farming and cub cuddling.",
+    "city": "Bristol",
+    "category": "Wildlife",
+    "picture": "https://www.conservationafrica.net/wp-content/themes/v1/images/logo.png",
+    "website": "https://www.conservationafrica.net"
+  },
+  {
+    "id": "bfa4b77a-687b-40cd-8d02-e738f42ad860",
+    "name": "Friends of the Earth", 
+    "mission": "Friends of the Earth is dedicated to protecting the natural world by leading campaigns, providing resources, and driving real solutions to the environmental problems facing us all.",
+    "city": "London",
+    "category": "Air",
+    "picture": "https://cdn.friendsoftheearth.uk/themes/custom/foed8/logo.png",
+    "website": "https://friendsoftheearth.uk/"
+  },
+  {
+    "id": "09d34e67-a975-4d47-9611-9a835ca283af",
+    "name": "Rainforest Alliance", 
+    "mission": "Rainforest Alliance is comprised of companies, farmers, foresters, communities, and consumers who are committed to creating a world where people and nature thrive in harmony.",
+    "city": "Monterrey",
+    "category": "Forest",
+    "picture": "https://www.rainforest-alliance.org/themes/custom/ra/images/ra_logo_lime.svg",
+    "website": "https://www.rainforest-alliance.org"
   }
 ]
