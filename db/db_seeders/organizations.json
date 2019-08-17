@@ -6,7 +6,7 @@
     "city": "Los Angeles",
     "category": "Land",
     "logo": "https://www.treepeople.org/profiles/treepeople/themes/custom/progressive/logo.png",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1484940564940-7eed11d146de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     "website": "treepeople.org"
   }, 
   {
@@ -16,7 +16,7 @@
     "city": "Barcelona",
     "category": "Ocean",
     "logo": "https://www.initiativesoceanes.org/_2016/img/sfe-new-logo-white.png",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80",
     "website": "initiativesoceanes.org"
   },
   {
@@ -26,7 +26,7 @@
     "city": "Barcelona",
     "category": "Ocean",
     "logo": "https://static.wixstatic.com/media/703ac4_b86ea50954654a4bacfaeb867a3e7a75~mv2_d_1395_1395_s_2.png/v1/fill/w_206,h_206,al_c,q_80,usm_0.66_1.00_0.01/LOGO_PNG.webp",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1499980762202-04245017d5bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     "website": "https://www.purecleanearth.org/"
   },
   {
@@ -36,7 +36,7 @@
     "city": "Santiago",
     "category": "Ocean",
     "logo": "https://oceana.org/sites/all/themes/oceana/images/logo_en.png",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1540202403-b7abd6747a18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     "website": "oceana.org"
   },
   {
@@ -46,7 +46,7 @@
     "city": "Bristol",
     "category": "Wildlife",
     "logo": "https://www.conservationafrica.net/wp-content/themes/v1/images/logo.png",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1503656142023-618e7d1f435a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1003&q=80",
     "website": "https://www.conservationafrica.net"
   },
   {
@@ -56,7 +56,7 @@
     "city": "London",
     "category": "Air",
     "logo": "https://cdn.friendsoftheearth.uk/themes/custom/foed8/logo.png",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     "website": "https://friendsoftheearth.uk/"
   },
   {
@@ -66,7 +66,7 @@
     "city": "Monterrey",
     "category": "Forest",
     "logo": "https://www.rainforest-alliance.org/themes/custom/ra/images/ra_logo_lime.svg",
-    "picture": "",
+    "picture": "https://images.unsplash.com/photo-1557308685-b3ff50340f7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     "website": "https://www.rainforest-alliance.org"
   }
 ]
