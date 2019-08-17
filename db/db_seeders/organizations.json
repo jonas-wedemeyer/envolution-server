@@ -5,7 +5,8 @@
     "mission": "TreePeople inspires and supports the people of LA to come together to plant and care for trees, harvest the rain, and renew depleted landscapes. We unite with communities to grow a greener, shadier and more water-secure city at homes, neighborhoods, schools and in the local mountains.",
     "city": "Los Angeles",
     "category": "Land",
-    "picture": "https://www.treepeople.org/profiles/treepeople/themes/custom/progressive/logo.png",
+    "logo": "https://www.treepeople.org/profiles/treepeople/themes/custom/progressive/logo.png",
+    "picture": "",
     "website": "treepeople.org"
   }, 
   {
@@ -14,7 +15,8 @@
     "mission": "Surfrider aims to tackle the marine litter issue through education, citizen participation, and lobbying.",
     "city": "Barcelona",
     "category": "Ocean",
-    "picture": "https://www.initiativesoceanes.org/_2016/img/sfe-new-logo-white.png",
+    "logo": "https://www.initiativesoceanes.org/_2016/img/sfe-new-logo-white.png",
+    "picture": "",
     "website": "initiativesoceanes.org"
   },
   {
@@ -23,7 +25,8 @@
     "mission": "Pure Clean Earth aims to properly sort and recycle every bit of trash that is collected to make sure that each material can be re-used when possible.  So, what’s the point in all of this? Rooted in every event is education, we provide the volunteers with information about plastic pollution and inspire them to help become a part of the solution.",
     "city": "Barcelona",
     "category": "Ocean",
-    "picture": "https://static.wixstatic.com/media/703ac4_b86ea50954654a4bacfaeb867a3e7a75~mv2_d_1395_1395_s_2.png/v1/fill/w_206,h_206,al_c,q_80,usm_0.66_1.00_0.01/LOGO_PNG.webp",
+    "logo": "https://static.wixstatic.com/media/703ac4_b86ea50954654a4bacfaeb867a3e7a75~mv2_d_1395_1395_s_2.png/v1/fill/w_206,h_206,al_c,q_80,usm_0.66_1.00_0.01/LOGO_PNG.webp",
+    "picture": "",
     "website": "https://www.purecleanearth.org/"
   },
   {
@@ -32,7 +35,8 @@
     "mission": "Oceana is the largest international advocacy group working solely to protect the world’s oceans. Oceana wins policy victories for the oceans using science-based campaigns.",
     "city": "Santiago",
     "category": "Ocean",
-    "picture": "https://oceana.org/sites/all/themes/oceana/images/logo_en.png",
+    "logo": "https://oceana.org/sites/all/themes/oceana/images/logo_en.png",
+    "picture": "",
     "website": "oceana.org"
   },
   {
@@ -41,7 +45,8 @@
     "mission": "African Conservation Experience helps wildlife conservationists in southern Africa. They are currently a leading player in the fight against cruel practices such as lion farming and cub cuddling.",
     "city": "Bristol",
     "category": "Wildlife",
-    "picture": "https://www.conservationafrica.net/wp-content/themes/v1/images/logo.png",
+    "logo": "https://www.conservationafrica.net/wp-content/themes/v1/images/logo.png",
+    "picture": "",
     "website": "https://www.conservationafrica.net"
   },
   {
@@ -50,7 +55,8 @@
     "mission": "Friends of the Earth is dedicated to protecting the natural world by leading campaigns, providing resources, and driving real solutions to the environmental problems facing us all.",
     "city": "London",
     "category": "Air",
-    "picture": "https://cdn.friendsoftheearth.uk/themes/custom/foed8/logo.png",
+    "logo": "https://cdn.friendsoftheearth.uk/themes/custom/foed8/logo.png",
+    "picture": "",
     "website": "https://friendsoftheearth.uk/"
   },
   {
@@ -59,7 +65,8 @@
     "mission": "Rainforest Alliance is comprised of companies, farmers, foresters, communities, and consumers who are committed to creating a world where people and nature thrive in harmony.",
     "city": "Monterrey",
     "category": "Forest",
-    "picture": "https://www.rainforest-alliance.org/themes/custom/ra/images/ra_logo_lime.svg",
+    "logo": "https://www.rainforest-alliance.org/themes/custom/ra/images/ra_logo_lime.svg",
+    "picture": "",
     "website": "https://www.rainforest-alliance.org"
   }
 ]

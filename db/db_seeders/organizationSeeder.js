@@ -11,6 +11,7 @@ module.exports = {
         mission: org.mission,
         city: org.city,
         category: org.category,
+        logo: org.logo,
         picture: org.picture,
         website: org.website,
         createdAt: new Date(),
