@@ -7,7 +7,7 @@
     "lint": "eslint",
     "dev": "nodemon index.js",
     "seed:all": "npx sequelize db:seed:all --config ./db/config.js --seeders-path ./db/seed-data",
-    "seed:undo": "npx sequelize db:seed:undo:all --config ./db/config.js --seeders-path ./db/db_seeders",
+    "seed:undo": "npx sequelize db:seed:undo:all --config ./db/config.js --seeders-path ./db/seed-data",
     "start": "node index.js"
   },
   "repository": {
