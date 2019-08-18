@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    const users = require('./users.json');
+    const users = require('../seed-data/users.json');
     const usersArray = [];
     users.forEach(user => {
       usersArray.push({

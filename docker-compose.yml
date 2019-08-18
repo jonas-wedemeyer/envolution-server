@@ -15,6 +15,9 @@ services:
     depends_on: 
       - db
     command: npm run dev
+    volumes: 
+      - ./:/app
+      - /node_modules
   db: 
     image: postgres
     restart: always

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    const organizations = require('./organizations.json');
+    const organizations = require('../seed-data/organizations.json');
     const orgsArray = [];
     organizations.forEach(org => {
       orgsArray.push({
