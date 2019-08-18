@@ -44,14 +44,9 @@ exports.getOneProject = async (ctx, next) => {
 
 exports.createProject = async (ctx, next) => {
   const proj = ctx.request.body;
-  console.log('REQ.BODY', proj);
   try {
     await Project.create({ ...proj }, { returning: true }).then(project => {
-      console.log(
-        project.get({
-          plain: true,
-        }),
-      );
+      ctx.body = project;
     });
     ctx.status = 201;
   } catch (error) {
