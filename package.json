@@ -38,7 +38,6 @@
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "bcrypt": "^3.0.6",
-    "brcypt": "^1.0.1",
     "dotenv": "^8.0.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
