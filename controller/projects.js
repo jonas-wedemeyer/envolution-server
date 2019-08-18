@@ -1,5 +1,4 @@
-const { project: Project } = require('../db/models/');
-const { user: User } = require('../db/models/');
+const { project: Project, user: User } = require('../db/models/');
 
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
@@ -26,7 +25,7 @@ exports.getOneProject = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
     const proj = await Project.findOne({
-      id: projectId,
+      where: { id: projectId },
     });
     if (proj) {
       ctx.body = {
@@ -65,13 +64,11 @@ exports.getAllPax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
     const participants = await Project.findAll({
-      id: projectId,
-      include: [
-        {
-          model: User,
-          as: 'users',
-        },
-      ],
+      where: { id: projectId },
+      include: {
+        model: User,
+        as: 'users',
+      },
     });
     if (participants) {
       ctx.body = {
