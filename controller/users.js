@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const atob = require('atob');
+const jwt = require('jsonwebtoken');
 
 const { user: User } = require('../db/models');
 const { filterProps } = require('../utils/filterProps');
@@ -25,8 +26,8 @@ exports.createUser = async ctx => {
         'createdAt',
         'updatedAt',
       ]);
-      ctx.body = user;
       ctx.status = 201;
+      ctx.body = { token: jwt.sign(user, process.env.JWT_SECRET) };
     }
   } catch (error) {
     ctx.status = error.status || 500;
@@ -36,22 +37,21 @@ exports.createUser = async ctx => {
 
 exports.getUser = async ctx => {
   try {
-    const authHeader = atob(
-      ctx.headers.authorization.split('Basic ').join(''),
-    ).split(':');
+    const authHeader = atob(ctx.headers.authorization.split(' ')[1]).split(':');
     const [email, password] = authHeader;
-    const user = await User.findOne({ where: { email } });
+    let user = await User.findOne({ where: { email } });
 
     if (user) {
       const pwMatch = await bcrypt.compare(password, user.password);
       if (pwMatch) {
-        ctx.status = 200;
-        ctx.body = filterProps(user.dataValues, [
+        user = filterProps(user.dataValues, [
           'id',
           'password',
           'createdAt',
           'updatedAt',
         ]);
+        ctx.status = 200;
+        ctx.body = { token: jwt.sign(user, process.env.JWT_SECRET) };
       }
     } else {
       ctx.status = 400;
