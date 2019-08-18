@@ -1,11 +1,10 @@
-const { project } = require('../db/models/');
-const { user } = require('../db/models/');
+const { project: Project, user: User } = require('../db/models/');
 
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
   try {
-    const projectList = await project.findAll({
-      city: inputCity,
+    const projectList = await Project.findAll({
+      where: { city: inputCity },
     });
     if (projectList) {
       ctx.body = {
@@ -25,8 +24,8 @@ exports.getProjectList = async (ctx, next) => {
 exports.getOneProject = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    const proj = await project.findOne({
-      id: projectId,
+    const proj = await Project.findOne({
+      where: { id: projectId },
     });
     if (proj) {
       ctx.body = {
@@ -45,37 +44,10 @@ exports.getOneProject = async (ctx, next) => {
 
 exports.createProject = async (ctx, next) => {
   const proj = ctx.request.body;
-  console.log('REQ.BODY', proj);
   try {
-    await project
-      .create(
-        {
-          name: proj.name,
-          category: proj.category,
-          organizationName: proj.organizationName,
-          organizationId: proj.organizationId,
-          address: proj.address,
-          city: proj.city,
-          date: proj.date,
-          shortTerm: proj.shortTerm,
-          time: proj.time,
-          description: proj.description,
-          role: proj.role,
-          qualifications: proj.qualifications,
-          tasks: proj.tasks,
-          totalSpaces: proj.totalSpaces,
-        },
-        {
-          returning: true,
-        },
-      )
-      .then(project => {
-        console.log(
-          project.get({
-            plain: true,
-          }),
-        );
-      });
+    await Project.create({ ...proj }, { returning: true }).then(project => {
+      ctx.body = project;
+    });
     ctx.status = 201;
   } catch (error) {
     ctx.status = error.status || 500;
@@ -86,14 +58,12 @@ exports.createProject = async (ctx, next) => {
 exports.getAllPax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    const participants = await project.findAll({
-      id: projectId,
-      include: [
-        {
-          model: user,
-          as: 'users',
-        },
-      ],
+    const participants = await Project.findAll({
+      where: { id: projectId },
+      include: {
+        model: User,
+        as: 'users',
+      },
     });
     if (participants) {
       ctx.body = {
@@ -113,7 +83,7 @@ exports.getAllPax = async (ctx, next) => {
 exports.updatePax = async (ctx, next) => {
   const projectId = ctx.params.id;
   try {
-    await project.update('user', {
+    await Project.update('user', {
       through: {
         enrollDate: new Date(),
       },
@@ -123,7 +93,7 @@ exports.updatePax = async (ctx, next) => {
       returning: true,
       plain: true,
     });
-    await project.decrement('spacesAvailable', {
+    await Project.decrement('spacesAvailable', {
       by: 1,
       where: {
         id: projectId,

@@ -43,6 +43,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   Organization.associate = models => {
     Organization.hasMany(models.project, {
+      foreignKey: 'organizationId',
+      sourceKey: 'id',
       as: 'projects',
     });
   };
