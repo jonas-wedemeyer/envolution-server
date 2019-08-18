@@ -19,11 +19,13 @@ exports.createUser = async ctx => {
       }
       user = await User.create({ ...userData });
       user = Object.keys(user.dataValues)
-        .filter(key => !['id', 'password'].includes(key))
+        .filter(
+          key => !['id', 'password', 'createdAt', 'updatedAt'].includes(key),
+        )
         .reduce((acc, key) => {
           return {
             ...acc,
-            [key]: user[key],
+            [key]: user.dataValues[key],
           };
         }, {});
       ctx.body = user;
