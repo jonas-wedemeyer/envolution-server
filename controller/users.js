@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const atob = require('atob');
 
 const { user: User } = require('../db/models');
+const { filterProps } = require('../utils/filterProps');
 
 exports.createUser = async ctx => {
   try {
@@ -18,16 +19,12 @@ exports.createUser = async ctx => {
         userData.password = hash;
       }
       user = await User.create({ ...userData });
-      user = Object.keys(user.dataValues)
-        .filter(
-          key => !['id', 'password', 'createdAt', 'updatedAt'].includes(key),
-        )
-        .reduce((acc, key) => {
-          return {
-            ...acc,
-            [key]: user.dataValues[key],
-          };
-        }, {});
+      user = filterProps(user.dataValues, [
+        'id',
+        'password',
+        'createdAt',
+        'updatedAt',
+      ]);
       ctx.body = user;
       ctx.status = 201;
     }
@@ -49,16 +46,12 @@ exports.getUser = async ctx => {
       const pwMatch = await bcrypt.compare(password, user.password);
       if (pwMatch) {
         ctx.status = 200;
-        ctx.body = Object.keys(user.dataValues)
-          .filter(
-            key => !['id', 'password', 'createdAt', 'updatedAt'].includes(key),
-          )
-          .reduce((acc, key) => {
-            return {
-              ...acc,
-              [key]: user.dataValues[key],
-            };
-          }, {});
+        ctx.body = filterProps(user.dataValues, [
+          'id',
+          'password',
+          'createdAt',
+          'updatedAt',
+        ]);
       }
     } else {
       ctx.status = 400;
