@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const atob = require('atob');
 
 const { user: User } = require('../db/models');
 
@@ -34,7 +35,37 @@ exports.createUser = async ctx => {
   }
 };
 
-exports.getUser = async (ctx, next) => {
+exports.getUser = async ctx => {
   try {
-  } catch (error) {}
+    const authHeader = atob(
+      ctx.headers.authorization.split('Basic ').join(''),
+    ).split(':');
+    const [email, password] = authHeader;
+    const user = await User.findOne({ where: { email } });
+
+    if (user) {
+      const pwMatch = await bcrypt.compare(password, user.password);
+      if (pwMatch) {
+        ctx.status = 200;
+        ctx.body = Object.keys(user.dataValues)
+          .filter(
+            key => !['id', 'password', 'createdAt', 'updatedAt'].includes(key),
+          )
+          .reduce((acc, key) => {
+            return {
+              ...acc,
+              [key]: user.dataValues[key],
+            };
+          }, {});
+      }
+    } else {
+      ctx.status = 400;
+      ctx.body = {
+        error: 'User does not exist',
+      };
+    }
+  } catch (error) {
+    ctx.status = 500;
+    ctx.body = error;
+  }
 };

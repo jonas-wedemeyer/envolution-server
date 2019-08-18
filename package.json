@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@koa/cors": "^3.0.0",
+    "atob": "^2.1.2",
     "bcrypt": "^3.0.6",
     "dotenv": "^8.0.0",
     "koa": "^2.7.0",
