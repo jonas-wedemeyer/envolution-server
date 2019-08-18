@@ -5,7 +5,7 @@ exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
   try {
     const projectList = await Project.findAll({
-      city: inputCity,
+      where: { city: inputCity },
     });
     if (projectList) {
       ctx.body = {

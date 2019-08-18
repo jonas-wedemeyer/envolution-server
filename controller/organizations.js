@@ -4,7 +4,7 @@ exports.getOneOrg = async (ctx, next) => {
   const orgId = ctx.params.id;
   try {
     const organization = await Organization.findOne({
-      id: orgId,
+      where: { id: orgId },
     });
     if (organization) {
       ctx.body = {
