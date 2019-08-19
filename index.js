@@ -2,14 +2,18 @@ const Koa = require('koa');
 const app = new Koa();
 const cors = require('@koa/cors');
 const bodyParser = require('koa-bodyparser');
-const port = process.env.SERVER_PORT || 3002;
+const koaJWT = require('koa-jwt');
+require('dotenv').config();
 
+const port = process.env.SERVER_PORT || 3002;
+const secret = process.env.JWT_SECRET;
 const router = require('./router/index');
 const db = require('./db/models');
 
 app
   .use(cors())
   .use(bodyParser())
+  .use(koaJWT({ secret }).unless({ path: [/^\/sign/] }))
   .use(router.routes())
   .use(router.allowedMethods());
 

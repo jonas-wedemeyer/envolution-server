@@ -9,6 +9,10 @@ const {
   getAllPax,
 } = require('../controller/projects');
 const { getOneOrg } = require('../controller/organizations');
+const { createUser, getUser } = require('../controller/users');
+
+router.post('/sign-up', createUser);
+router.get('/sign-in', getUser);
 
 router.get('/projects', getProjectList);
 router.get('/projects/:id', getOneProject);
