@@ -120,7 +120,6 @@ exports.editUser = async (ctx, next) => {
     });
 
     // const userUpdate = filterProps(userEmail, ['id', 'password']);
-    console.log(user);
     if (user) {
       // await User.update('interests',
       //   through:  {
