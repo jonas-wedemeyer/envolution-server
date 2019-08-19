@@ -22,15 +22,20 @@ exports.createUser = async ctx => {
       user = await User.create({ ...userData });
       user = filterProps(user.dataValues, [
         'id',
+        'picture',
         'password',
+        'aboutMe',
+        'interests',
         'createdAt',
         'updatedAt',
       ]);
       ctx.status = 201;
-      ctx.body = { token: jwt.sign(user, process.env.JWT_SECRET) };
+      ctx.body = {
+        token: jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '7 days' }),
+      };
     }
   } catch (error) {
-    ctx.status = error.status || 500;
+    ctx.status = 500;
     ctx.body = error.message;
   }
 };
@@ -46,12 +51,19 @@ exports.getUser = async ctx => {
       if (pwMatch) {
         user = filterProps(user.dataValues, [
           'id',
+          'picture',
           'password',
+          'aboutMe',
+          'interests',
           'createdAt',
           'updatedAt',
         ]);
         ctx.status = 200;
-        ctx.body = { token: jwt.sign(user, process.env.JWT_SECRET) };
+        ctx.body = {
+          token: jwt.sign(user, process.env.JWT_SECRET, {
+            expiresIn: '7 days',
+          }),
+        };
       }
     } else {
       ctx.status = 400;
