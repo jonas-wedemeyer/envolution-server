@@ -78,10 +78,10 @@ exports.getUser = async ctx => {
 };
 
 exports.findUser = async (ctx, next) => {
-  const userEmail = ctx.request.id;
+  const userEmail = ctx.params.id; // how to send email through request --- ctx.request.email??
   try {
     const user = await User.findOne({
-      where: { email: userEmail },
+      where: { id: userEmail },
       include: [
         {
           model: Project,
@@ -106,10 +106,11 @@ exports.findUser = async (ctx, next) => {
 };
 
 exports.editUser = async (ctx, next) => {
-  const userEmail = ctx.request.id;
+  // fix this controller to update all input fields correctly (start with interestsP)
+  const userEmail = ctx.request.body.id; // how to send email through request --- ctx.request.email??
   try {
     const user = await User.findOne({
-      where: { email: userEmail },
+      where: { id: userEmail },
       include: [
         {
           model: Project,
@@ -118,13 +119,17 @@ exports.editUser = async (ctx, next) => {
       ],
     });
 
-    const userUpdate = filterProps(ctx.body, ['id', 'password']);
-    await user.update(userUpdate);
-
-    if (userUpdate) {
+    // const userUpdate = filterProps(userEmail, ['id', 'password']);
+    console.log(user);
+    if (user) {
+      // await User.update('interests',
+      //   through:  {
+      //     interests:
+      //   }
+      // );
       ctx.body = {
         status: 'success',
-        data: userUpdate,
+        data: user,
       };
       ctx.status = 200;
     } else {
