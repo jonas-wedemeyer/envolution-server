@@ -78,7 +78,7 @@ exports.getUser = async ctx => {
 };
 
 exports.findUser = async (ctx, next) => {
-  const userEmail = ctx.request.email;
+  const userEmail = ctx.request.id;
   try {
     const user = await User.findOne({
       where: { email: userEmail },
@@ -89,10 +89,42 @@ exports.findUser = async (ctx, next) => {
         },
       ],
     });
+
     if (user) {
       ctx.body = {
         status: 'success',
         data: user,
+      };
+      ctx.status = 200;
+    } else {
+      ctx.status = 404;
+    }
+  } catch (error) {
+    ctx.status = error.status || 500;
+    ctx.body = error.message;
+  }
+};
+
+exports.editUser = async (ctx, next) => {
+  const userEmail = ctx.request.id;
+  try {
+    const user = await User.findOne({
+      where: { email: userEmail },
+      include: [
+        {
+          model: Project,
+          as: 'projects',
+        },
+      ],
+    });
+
+    const userUpdate = filterProps(ctx.body, ['id', 'password']);
+    await user.update(userUpdate);
+
+    if (userUpdate) {
+      ctx.body = {
+        status: 'success',
+        data: userUpdate,
       };
       ctx.status = 200;
     } else {
