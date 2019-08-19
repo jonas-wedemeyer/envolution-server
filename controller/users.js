@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const atob = require('atob');
 const jwt = require('jsonwebtoken');
 
-const { user: User } = require('../db/models');
+const { user: User, project: Project } = require('../db/models');
 const { filterProps } = require('../utils/filterProps');
 
 exports.createUser = async ctx => {
@@ -74,5 +74,32 @@ exports.getUser = async ctx => {
   } catch (error) {
     ctx.status = 500;
     ctx.body = error;
+  }
+};
+
+exports.findUser = async (ctx, next) => {
+  const userEmail = ctx.request.email;
+  try {
+    const user = await User.findOne({
+      where: { email: userEmail },
+      include: [
+        {
+          model: Project,
+          as: 'projects',
+        },
+      ],
+    });
+    if (user) {
+      ctx.body = {
+        status: 'success',
+        data: user,
+      };
+      ctx.status = 200;
+    } else {
+      ctx.status = 404;
+    }
+  } catch (error) {
+    ctx.status = error.status || 500;
+    ctx.body = error.message;
   }
 };
