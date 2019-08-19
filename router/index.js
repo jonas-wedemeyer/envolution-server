@@ -21,7 +21,7 @@ router.get('/sign-in', getUser);
 router.get('/myprofile/:id', findUser);
 router.put('/myprofile/:id', editUser);
 
-router.get('/projects', getProjectList);
+router.get('/projects/city/:city', getProjectList);
 router.get('/projects/:id', getOneProject);
 router.post('/projects', createProject);
 router.get('/projects/:id/participants', getAllPax);
