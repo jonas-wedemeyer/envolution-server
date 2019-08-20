@@ -4,6 +4,24 @@ const {
   organization: Organization,
 } = require('../db/models/');
 
+exports.getAllProjects = async (ctx, next) => {
+  try {
+    const allProjects = await Project.findAll();
+    if (allProjects) {
+      ctx.body = {
+        status: 'success',
+        data: allProjects,
+      };
+      ctx.status = 200;
+    } else {
+      ctx.status = 404;
+    }
+  } catch (error) {
+    ctx.status = error.status || 500;
+    ctx.body = error.message;
+  }
+};
+
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
   try {
