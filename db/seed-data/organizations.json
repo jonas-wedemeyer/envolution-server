@@ -68,5 +68,45 @@
     "logo": "https://www.rainforest-alliance.org/themes/custom/ra/images/ra_logo_lime.svg",
     "picture": "https://images.unsplash.com/photo-1557308685-b3ff50340f7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     "website": "https://www.rainforest-alliance.org"
+  },
+  {
+    "id": "82f0185b-adf3-47bf-9d6c-8d8b8db17628",
+    "name": "Fundación Catalunya La Pedrera", 
+    "mission": "Rainforest Alliance is comprised of companies, farmers, foresters, communities, and consumers who are committed to creating a world where people and nature thrive in harmony.",
+    "city": "Barcelona",
+    "category": "Forest",
+    "logo": "https://www.fundaciocatalunya-lapedrera.com/sites/all/themes/osocial/images/fundacio-catalunya--lapedrera-interior.gif",
+    "picture": "https://images.unsplash.com/photo-1463917831476-56bba68d5f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80",
+    "website": "https://www.fundaciocatalunya-lapedrera.com"
+  }, 
+  {
+    "id": "023dced9-16b5-4d9f-8819-6fede4d01afe",
+    "name": "Climacció", 
+    "mission": "Climacció fights in different creative ways for a system change to stop the climate crisis.",
+    "city": "Barcelona",
+    "category": "Air",
+    "logo": "https://scontent.fbcn1-1.fna.fbcdn.net/v/t1.0-0/p370x247/67094554_393511264601990_6946042770058379264_n.png?_nc_cat=101&_nc_oc=AQkdsSbRd56AJ6bXmZgCQ12vJJmTnFduwQkiCZGY9CRaxJK40iGCi0ZZZZVBJ8M2oPk&_nc_ht=scontent.fbcn1-1.fna&oh=57408609a9a00993044424f274db08a0&oe=5E0E007E",
+    "picture": "https://images.unsplash.com/photo-1474183725112-79b6800d89a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+    "website": "https://www.facebook.com/pg/climaccio/about/?ref=page_internal"
+  }, 
+  {
+    "id": "e67614d7-c67d-4560-9273-813d83d48fb1",
+    "name": "Parc Agrari", 
+    "mission": "Provide fresh, quality, local to produce to residents of Barcelona throughout the entire year.",
+    "city": "Barcelona",
+    "category": "Land",
+    "logo": "http://www.elcampacasa.com/sites/default/files/panels/megalogo_producte_fresc.gif?1356553474",
+    "picture": "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+    "website": "https://https://parcs.diba.cat/es/web/baixllobregat"
+  }, 
+  {
+    "id": "dc33d917-bfc9-4dc5-a650-2b3cc2806cea",
+    "name": "Protectora Barcelona", 
+    "mission": "Protectora works tirelessly to save abandoned animals living in unsafe conditions.",
+    "city": "Barcelona",
+    "category": "Wildlife",
+    "logo": "https://pbs.twimg.com/profile_images/859682100345286656/SVsWzKlf_400x400.jpg",
+    "picture": "https://images.unsplash.com/photo-1490481920145-fc78891bbb99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+    "website": "https://protectorabcn.es"
   }
 ]

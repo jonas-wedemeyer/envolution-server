@@ -1,5 +1,8 @@
 const Router = require('koa-router');
 const router = new Router();
+const multer = require('koa-multer');
+
+const upload = multer({ dest: 'uploads/' });
 
 const {
   getProjectList,
@@ -7,6 +10,7 @@ const {
   updatePax,
   createProject,
   getAllPax,
+  getAllProjects,
 } = require('../controller/projects');
 const { getOneOrg } = require('../controller/organizations');
 const {
@@ -14,13 +18,16 @@ const {
   getUser,
   findUser,
   editUser,
+  uploadPicture,
 } = require('../controller/users');
 
 router.post('/sign-up', createUser);
 router.get('/sign-in', getUser);
-router.get('/myprofile/:id', findUser);
-router.put('/myprofile/:id', editUser);
+router.get('/myprofile', findUser);
+router.put('/myprofile', editUser);
+router.post('/myprofile', upload.single('profilePicture'), uploadPicture);
 
+router.get('/projects', getAllProjects);
 router.get('/projects/city/:city', getProjectList);
 router.get('/projects/:id', getOneProject);
 router.post('/projects', createProject);
