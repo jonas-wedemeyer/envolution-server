@@ -5,6 +5,7 @@
     "lastName": "Vila Tobella",
     "picture": "https://img2.rtve.es/v/5366449/", 
     "email": "rosalia@gmail.com", 
+    "city": "Barcelona",
     "password": "$2a$10$eC91zG.13bcEraW4EgquB.cOjP4upiO0FeODnWVFrdzHnVr2tFeL6", 
     "aboutMe": "I am a Spanish singer, songwriter, musician, record producer, businesswoman, actress, dancer, fashion designer, and model.", 
     "interests": [
@@ -18,6 +19,7 @@
     "lastName": "Miranda", 
     "picture": "https://www.billboard.com/files/styles/article_main_image/public/media/thalia-smiling-2015-r-billboard-1548.jpg", 
     "email": "thalia@gmail.com", 
+    "city": "Barcelona",
     "password": "$2a$10$yPgukIGIPHleJXJN7Or4Gu3gAwVow/h0aFurEAxq9GyK4UgsOGHvy", 
     "aboutMe": "I am a Mexican singer, songwriter, producer, actress and entrepreneur. She is considered one of the most successful and influential Mexican artists worldwide.", 
     "interests": [
