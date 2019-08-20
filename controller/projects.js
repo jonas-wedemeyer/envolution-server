@@ -1,4 +1,8 @@
-const { project: Project, user: User } = require('../db/models/');
+const {
+  project: Project,
+  user: User,
+  organization: Organization,
+} = require('../db/models/');
 
 exports.getProjectList = async (ctx, next) => {
   const inputCity = ctx.params.city;
@@ -45,10 +49,16 @@ exports.getOneProject = async (ctx, next) => {
 exports.createProject = async (ctx, next) => {
   const proj = ctx.request.body;
   try {
-    await Project.create({ ...proj }, { returning: true }).then(project => {
-      ctx.body = project;
+    await Organization.findOne({
+      where: { id: proj.organizationId },
+    }).then(async org => {
+      if (!org) {
+        return ctx.assert(org, 404, 'Organization not found');
+      }
+      await Project.create({ ...proj });
+      ctx.body = proj;
+      ctx.status = 201;
     });
-    ctx.status = 201;
   } catch (error) {
     ctx.status = error.status || 500;
     ctx.body = error.message;
@@ -56,6 +66,7 @@ exports.createProject = async (ctx, next) => {
 };
 
 exports.getAllPax = async (ctx, next) => {
+  // how to send participant pictures to front-end?
   const projectId = ctx.params.id;
   try {
     const participants = await Project.findAll({
@@ -81,7 +92,7 @@ exports.getAllPax = async (ctx, next) => {
 };
 
 exports.updatePax = async (ctx, next) => {
-  const projectId = ctx.params.id;
+  const projectId = ctx.params.id; // fix this to save the signed in user to the project
   try {
     await Project.update('user', {
       through: {

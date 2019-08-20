@@ -38,8 +38,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      shortTerm: {
-        type: DataTypes.BOOLEAN,
+      availability: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       time: {
