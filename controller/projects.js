@@ -1,7 +1,10 @@
+const atob = require('atob');
+
 const {
   project: Project,
   user: User,
   organization: Organization,
+  userProject: UserProject,
 } = require('../db/models/');
 
 exports.getAllProjects = async (ctx, next) => {
@@ -65,18 +68,15 @@ exports.getOneProject = async (ctx, next) => {
 };
 
 exports.createProject = async (ctx, next) => {
-  const proj = ctx.request.body;
+  const project = ctx.request.body;
   try {
-    await Organization.findOne({
-      where: { id: proj.organizationId },
-    }).then(async org => {
-      if (!org) {
-        return ctx.assert(org, 404, 'Organization not found');
-      }
-      await Project.create({ ...proj });
-      ctx.body = proj;
-      ctx.status = 201;
+    const organization = await Organization.findOne({
+      where: { id: project.organizationId },
     });
+    ctx.assert(organization, 404, 'Organization not found');
+    const newProject = await Project.create({ ...project });
+    ctx.status = 201;
+    ctx.body = newProject;
   } catch (error) {
     ctx.status = error.status || 500;
     ctx.body = error.message;
@@ -84,7 +84,6 @@ exports.createProject = async (ctx, next) => {
 };
 
 exports.getAllPax = async (ctx, next) => {
-  // how to send participant pictures to front-end?
   const projectId = ctx.params.id;
   try {
     const participants = await Project.findAll({
@@ -110,17 +109,26 @@ exports.getAllPax = async (ctx, next) => {
 };
 
 exports.updatePax = async (ctx, next) => {
-  const projectId = ctx.params.id; // fix this to save the signed in user to the project
+  const projectId = ctx.params.id;
+  let id;
+  const { email } = JSON.parse(
+    atob(ctx.request.header.authorization.split('.')[1]),
+  );
   try {
-    await Project.update('user', {
-      through: {
-        enrollDate: new Date(),
-      },
-      where: {
-        id: projectId,
-      },
-      returning: true,
-      plain: true,
+    const user = await User.findOne({
+      where: { email },
+      include: [
+        {
+          model: Project,
+          as: 'projects',
+        },
+      ],
+    });
+    const newPax = await UserProject.create({
+      id,
+      projectId,
+      userId: user.id,
+      enrollDate: new Date(),
     });
     await Project.decrement('spacesAvailable', {
       by: 1,
@@ -129,6 +137,7 @@ exports.updatePax = async (ctx, next) => {
       },
     });
     ctx.status = 200;
+    ctx.body = newPax;
   } catch (error) {
     ctx.status = error.status || 500;
     ctx.body = error.message;
