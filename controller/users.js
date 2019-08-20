@@ -78,12 +78,12 @@ exports.getUser = async ctx => {
 };
 
 exports.findUser = async (ctx, next) => {
-  const userEmail = JSON.parse(
+  const { email } = JSON.parse(
     atob(ctx.request.header.authorization.split('.')[1]),
-  ).email;
+  );
   try {
     const user = await User.findOne({
-      where: { email: userEmail },
+      where: { email },
       include: [
         {
           model: Project,
@@ -108,13 +108,13 @@ exports.findUser = async (ctx, next) => {
 };
 
 exports.editUser = async (ctx, next) => {
-  // fix this controller to update all input fields correctly (start with interestsP)
-  const userEmail = JSON.parse(
+  const editedUser = ctx.request.body;
+  const { email } = JSON.parse(
     atob(ctx.request.header.authorization.split('.')[1]),
-  ).email;
+  );
   try {
     const user = await User.findOne({
-      where: { id: userEmail },
+      where: { email },
       include: [
         {
           model: Project,
@@ -122,17 +122,16 @@ exports.editUser = async (ctx, next) => {
         },
       ],
     });
-
-    // const userUpdate = filterProps(userEmail, ['id', 'password']);
     if (user) {
-      // await User.update('interests',
-      //   through:  {
-      //     interests:
-      //   }
-      // );
+      const updatedUser = await User.update(
+        filterProps(editedUser.data, ['id', 'password']),
+        {
+          where: { email },
+        },
+      );
       ctx.body = {
         status: 'success',
-        data: user,
+        data: updatedUser,
       };
       ctx.status = 200;
     } else {
