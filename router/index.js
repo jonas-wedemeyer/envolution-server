@@ -19,8 +19,8 @@ const {
 
 router.post('/sign-up', createUser);
 router.get('/sign-in', getUser);
-router.get('/myprofile/:id', findUser);
-router.put('/myprofile/:id', editUser);
+router.get('/myprofile', findUser);
+router.put('/myprofile', editUser);
 
 router.get('/projects', getAllProjects);
 router.get('/projects/city/:city', getProjectList);
