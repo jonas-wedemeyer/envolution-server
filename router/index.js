@@ -7,6 +7,7 @@ const {
   updatePax,
   createProject,
   getAllPax,
+  getAllProjects,
 } = require('../controller/projects');
 const { getOneOrg } = require('../controller/organizations');
 const {
@@ -21,6 +22,7 @@ router.get('/sign-in', getUser);
 router.get('/myprofile/:id', findUser);
 router.put('/myprofile/:id', editUser);
 
+router.get('/projects', getAllProjects);
 router.get('/projects/city/:city', getProjectList);
 router.get('/projects/:id', getOneProject);
 router.post('/projects', createProject);
