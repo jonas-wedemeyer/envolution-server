@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     picture: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     email: {
@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
         isEmail: true,
       },
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING,
