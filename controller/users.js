@@ -19,6 +19,7 @@ exports.createUser = async ctx => {
     } else {
       if (userData.password) {
         const hash = await bcrypt.hash(userData.password, 10);
+        console.log('This is the hash', hash);
         userData.password = hash;
       }
       user = await User.create({ ...userData });
@@ -125,12 +126,17 @@ exports.editUser = async (ctx, next) => {
       ],
     });
     if (user) {
-      const updatedUser = await User.update(
-        filterProps(editedUser.data, ['id', 'password']),
-        {
-          where: { email },
-        },
-      );
+      let updatedUser = await User.update(editedUser, {
+        where: { email },
+        returning: true,
+      });
+      updatedUser = filterProps(updatedUser[1][0].dataValues, [
+        'id',
+        'password',
+        'createdAt',
+        'updatedAt',
+      ]);
+
       ctx.body = {
         status: 'success',
         data: updatedUser,
