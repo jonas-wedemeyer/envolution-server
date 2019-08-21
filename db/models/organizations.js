@@ -27,11 +27,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       logo: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
       picture: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
       website: {
