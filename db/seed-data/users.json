@@ -6,7 +6,7 @@
     "picture": "https://img2.rtve.es/v/5366449/", 
     "email": "rosalia@gmail.com", 
     "city": "Barcelona",
-    "password": "$2a$10$eC91zG.13bcEraW4EgquB.cOjP4upiO0FeODnWVFrdzHnVr2tFeL6", 
+    "password": "2b$10$ogChIhI.TGnm.f0bfEGFDeGajIu1KOG4Uc0m0AZTaCmow2HtDyTNm", 
     "aboutMe": "I am a Spanish singer, songwriter, musician, record producer, businesswoman, actress, dancer, fashion designer, and model.", 
     "interests": [
       "Ocean", 
@@ -15,13 +15,13 @@
   }, 
   {
     "id": "1391f1d7-eb16-438e-ac5a-dd9975cec50c", 
-    "firstName": "Thalia", 
-    "lastName": "Miranda", 
-    "picture": "https://www.billboard.com/files/styles/article_main_image/public/media/thalia-smiling-2015-r-billboard-1548.jpg", 
-    "email": "thalia@gmail.com", 
+    "firstName": "Jonas", 
+    "lastName": "Wedemeyer", 
+    "picture": "https://avatars3.githubusercontent.com/u/17068734?s=460&v=4", 
+    "email": "jonas@wedemeyer.com", 
     "city": "Barcelona",
     "password": "$2b$10$ogChIhI.TGnm.f0bfEGFDeGajIu1KOG4Uc0m0AZTaCmow2HtDyTNm", 
-    "aboutMe": "I am a Mexican singer, songwriter, producer, actress and entrepreneur. She is considered one of the most successful and influential Mexican artists worldwide.", 
+    "aboutMe": "I am a Mexican singer, songwriter, producer, actor and entrepreneur. I am considered one of the most successful and influential Mexican artists worldwide.", 
     "interests": [
       "Land", 
       "Wildlife", 
