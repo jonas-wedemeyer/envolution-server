@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint",
     "dev": "nodemon index.js",
-    "seed:all": "npx sequelize db:seed:all --config ./db/config.js --seeders-path ./db/seed-data",
-    "seed:undo": "npx sequelize db:seed:undo:all --config ./db/config.js --seeders-path ./db/seed-data",
+    "seed:all": "npx sequelize db:seed:all --config ./db/config.js --seeders-path ./db/seeders",
+    "seed:undo": "npx sequelize db:seed:undo:all --config ./db/config.js --seeders-path ./db/seeders",
     "start": "node index.js"
   },
   "repository": {
