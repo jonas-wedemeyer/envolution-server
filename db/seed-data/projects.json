@@ -179,7 +179,7 @@
   },
   {    
     "id": "b5ff64af-33a8-4651-8b6c-d26d336a3e89",
-    "name": "Campaign to Clean Oil Spill in Chile",
+    "name": "Campaign to Clean Oil Spill",
     "category": "Ocean", 
     "organizationName": "Oceana", 
     "organizationId": "b3324970-28bd-479e-a852-db4eb0afb182", 
@@ -202,7 +202,7 @@
   }, 
   {    
     "id": "db06af81-a56e-4477-b8f9-fded2f599f1f",
-    "name": "Campaign to Stop Offshore Oil Drilling in Belize",
+    "name": "Campaign to End Offshore Oil Drilling",
     "category": "Ocean", 
     "organizationName": "Oceana", 
     "organizationId": "b3324970-28bd-479e-a852-db4eb0afb182", 
@@ -340,7 +340,7 @@
   }, 
   {    
     "id": "de5bd666-3b65-43f0-b13e-e984f9ba24ac",
-    "name": "Help organize a city-wide strike against the air pollution crisis ",
+    "name": "Strike against the air pollution",
     "category": "Air", 
     "organizationName": "Climacció", 
     "organizationId": "023dced9-16b5-4d9f-8819-6fede4d01afe", 
@@ -363,7 +363,7 @@
   }, 
   {    
     "id": "ed2cf15b-6efe-4c0d-9410-529bc58cd250",
-    "name": "Limit cruise ships arriving in Barcelona",
+    "name": "Limit cruise ships arriving",
     "category": "Ocean", 
     "organizationName": "Oceana", 
     "organizationId": "b3324970-28bd-479e-a852-db4eb0afb182", 
@@ -386,7 +386,7 @@
   }, 
   {    
     "id": "bdecb5fb-31fd-49b9-8fd5-5dda6ccd8f24",
-    "name": "Protect animals by helping them find shelter",
+    "name": "Protect and shelter animals",
     "category": "Wildlife", 
     "organizationName": "Protectora Barcelona", 
     "organizationId": "dc33d917-bfc9-4dc5-a650-2b3cc2806cea", 
@@ -409,7 +409,7 @@
   }, 
   {    
     "id": "1f141420-269d-4153-b626-d9c0eee760dd",
-    "name": "Run the innovative ecological brand of a world-renowned urban farm",
+    "name": "Branding of ecological products",
     "category": "Land", 
     "organizationName": "Protectora Barcelona", 
     "organizationId": "e67614d7-c67d-4560-9273-813d83d48fb1", 
