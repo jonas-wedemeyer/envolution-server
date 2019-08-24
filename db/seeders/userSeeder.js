@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: queryInterface => {
     const users = require('../seed-data/users.json');
     const usersArray = users.map(user => ({
       ...user,
@@ -10,7 +10,7 @@ module.exports = {
     }));
     return queryInterface.bulkInsert('users', usersArray);
   },
-  down: (queryInterface, Sequelize) => {
+  down: queryInterface => {
     return queryInterface.bulkDelete('users', null);
   },
 };
