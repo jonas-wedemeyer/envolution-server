@@ -116,7 +116,7 @@ Your bash should now look like this:
 5. Run the server with the following:
 
 ```bash
-  npx run dev
+  npm run dev
 ```
 
 6. To seed the database, open a new terminal window and enter the following: 
