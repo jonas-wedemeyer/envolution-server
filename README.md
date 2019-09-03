@@ -75,7 +75,7 @@ For Windows users please refer to the following site to install PostgreSQL: http
 ```
 
 ###Solving potential errors when running Docker: 
--  If you get an error regarding Sequelize that indicates port `5432` is already in use, change the host port within the `docker-compose.yml` file from `5432` to another number, for instance `4000`. The final result will be the following: 
+-  If you get an error regarding Sequelize that indicates port `5432` is already in use, change the host port within the `docker-compose.yml` file from `5432` to a number above 3000, for instance `4000`. The final result will be the following: 
 ```bash
   ports: 
     - 4000:5432
