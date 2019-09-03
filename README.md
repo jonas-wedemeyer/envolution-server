@@ -9,7 +9,7 @@ Envolution is a platform that connects environmental organizations with voluntee
 
 ## Getting started
 
-This is the back-end repository. The front-end can be found at : --link to update
+This is the back-end repository. The front-end can be found at [GitHub](https://github.com/jonas-wedemeyer/envolution-client)
 
 ### Installation
 
@@ -17,24 +17,22 @@ This is the back-end repository. The front-end can be found at : --link to updat
 
 To use the Envolution server consider the following: 
 
-- Begin by forking this repository, and cloning it to your computer with the follwoing command: 
+1. Begin by forking this repository, and cloning it to your computer with the following command: 
 
  ```bash
-   git clone https://github.com/ --link to update
+   git clone https://github.com/jonas-wedemeyer/envolution-server.git
  ```
 
-- After cloning the repo you'll have to decide whether or not to use Docker to run the server. Below you’ll find the steps for running the server with or without Docker.
-
-- For macOS users, use Homebrew to install PostgreSQL. Install and start PostgreSQL on your machine by entering the two commands below in your terminal:
+2. For macOS users, use Homebrew to install PostgreSQL. Install and start PostgreSQL on your machine by entering the two commands below in your terminal:
 
 ```bash
   brew install postgres
   brew services start postgres
 ```
 
-- For Windows users please refer to the following site to install PostgreSQL: https://www.postgresql.org/download/windows/
+For Windows users please refer to the following site to install PostgreSQL: https://www.postgresql.org/download/windows/
 
-- Set the environment variables in the `example.env` file. You can leave the `NODE_ENV` and `DB_NAME` set to`production` and `envolution` correspondingly. Create a password and set it to `JWT_SECRET`. The DB_USR and DB_PASS variables correspond to your PostgreSQL account username and password. Create a Cloudinary account at the following site: https://cloudinary.com/users/register/free
+3. Set the environment variables in the `example.env` file. You can leave the `NODE_ENV` and `DB_NAME` set to`production` and `envolution` correspondingly. Create a password and set it to `JWT_SECRET`. The DB_USR and DB_PASS variables correspond to your PostgreSQL account username and password. Create a Cloudinary account at the following site: https://cloudinary.com/users/register/free
 
 ```bash
   NODE_ENV=production
@@ -48,8 +46,9 @@ To use the Envolution server consider the following:
 
   CLOUDINARY_URL=
 ```
+4. After cloning the repo you'll have to decide whether or not to use Docker to run the server. Below you’ll find the steps for running the server with or without Docker.
 
-####With Docker
+###With Docker
 
 1.  Start running Docker on your machine
 
@@ -75,8 +74,8 @@ To use the Envolution server consider the following:
   bash scripts/seed-db.sh
 ```
 
-#####Solving potential errors when running Docker: 
-- If you get an error regarding Sequelize that indicates port `5432` is already in use, change the host port within the `docker-compose.yml` file from `5432` to `4000`, the final result will be the following: 
+###Solving potential errors when running Docker: 
+-  If you get an error regarding Sequelize that indicates port `5432` is already in use, change the host port within the `docker-compose.yml` file from `5432` to another number, for instance `4000`. The final result will be the following: 
 ```bash
   ports: 
     - 4000:5432
@@ -87,7 +86,7 @@ To use the Envolution server consider the following:
   docker system prune 
 ```
 
-####Without Docker
+###Without Docker
 
 1.  In the `example.env` file set the variable `DB_HOST` to `db`
 
@@ -104,7 +103,7 @@ To use the Envolution server consider the following:
 Your bash should now look like this:
 
 ```bash
-  envolution#=
+  envolution=# 
 ```
 
 4. Set a password for the current PostgreSQL user with the following command:
@@ -132,3 +131,9 @@ Your bash should now look like this:
 * PostgreSQL
 * JWT
 * Docker
+
+##Developers 
+
+* Coralie Daccord - [GitHub](https://github.com/Coralie19) -[LinkedIn](https://www.linkedin.com/in/coralie-daccord)
+* Alexa Schaeffer Quintero - [GitHub](https://github.com/miquintero) - [LinkedIn](https://www.linkedin.com/in/alexa-schaeffer-quintero)
+* Jonas Wedemeyer - [GitHub](https://github.com/jonas-wedemeyer) - [LinkedIn](https://www.linkedin.com/in/jonas-wedemeyer)
