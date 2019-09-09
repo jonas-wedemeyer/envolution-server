@@ -15,8 +15,8 @@ services:
       - db
     command: npm run dev
     volumes: 
-      - ./:/app
-      - /node_modules
+      - ./:/app/envolution
+      - /app/envolution/node_modules
   db: 
     image: postgres
     restart: always
