@@ -8,7 +8,6 @@ services:
     environment: 
       - NODE_ENV=${NODE_ENV}
       - SERVER_PORT=${SERVER_PORT}
-      - CLOUDINARY_URL=${CLOUDINARY_URL}
     ports: 
       - ${SERVER_PORT}:${SERVER_PORT}
     depends_on: 

@@ -43,8 +43,6 @@ For Windows users please refer to the following site to install PostgreSQL: http
   DB_PASS=
   DB_NAME=envolution
   DB_HOST=db
-
-  CLOUDINARY_URL=
 ```
 4. After cloning the repo you'll have to decide whether or not to use Docker to run the server. Below you’ll find the steps for running the server with or without Docker.
 
