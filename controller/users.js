@@ -17,7 +17,6 @@ exports.createUser = async ctx => {
     } else {
       if (userData.password) {
         const hash = await bcrypt.hash(userData.password, 10);
-        console.log('This is the hash', hash);
         userData.password = hash;
       }
       user = await User.create({ ...userData });
@@ -83,7 +82,7 @@ exports.findUser = async (ctx, next) => {
     atob(ctx.request.header.authorization.split('.')[1]),
   );
   try {
-    const user = await User.findOne({
+    let user = await User.findOne({
       where: { email },
       include: [
         {
@@ -94,6 +93,12 @@ exports.findUser = async (ctx, next) => {
     });
 
     if (user) {
+      user = filterProps(user.dataValues, [
+        'id',
+        'password',
+        'createdAt',
+        'updatedAt',
+      ]);
       ctx.body = {
         status: 'success',
         data: user,
