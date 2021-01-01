@@ -3,21 +3,19 @@ version: '3.1'
 services: 
   server: 
     build: ./
-    environment: 
     expose: 
       - ${SERVER_PORT}
     environment: 
       - NODE_ENV=${NODE_ENV}
       - SERVER_PORT=${SERVER_PORT}
-      - CLOUDINARY_URL=${CLOUDINARY_URL}
     ports: 
       - ${SERVER_PORT}:${SERVER_PORT}
     depends_on: 
       - db
     command: npm run dev
     volumes: 
-      - ./:/app
-      - /node_modules
+      - ./:/app/envolution
+      - /app/envolution/node_modules
   db: 
     image: postgres
     restart: always

@@ -32,7 +32,7 @@ To use the Envolution server consider the following:
 
 For Windows users please refer to the following site to install PostgreSQL: https://www.postgresql.org/download/windows/
 
-3. Set the environment variables in the `example.env` file. You can leave the `NODE_ENV` and `DB_NAME` set to`production` and `envolution` correspondingly. Create a password and set it to `JWT_SECRET`. The DB_USR and DB_PASS variables correspond to your PostgreSQL account username and password. Create a Cloudinary account at the following site: https://cloudinary.com/users/register/free
+3. Set the environment variables in the `example.env` file. You can leave the `NODE_ENV` and `DB_NAME` set to`production` and `envolution` correspondingly. Create a password and set it to `JWT_SECRET`. The DB_USR and DB_PASS variables correspond to your PostgreSQL account username and password.
 
 ```bash
   NODE_ENV=production
@@ -43,8 +43,6 @@ For Windows users please refer to the following site to install PostgreSQL: http
   DB_PASS=
   DB_NAME=envolution
   DB_HOST=db
-
-  CLOUDINARY_URL=
 ```
 4. After cloning the repo you'll have to decide whether or not to use Docker to run the server. Below you’ll find the steps for running the server with or without Docker.
 
